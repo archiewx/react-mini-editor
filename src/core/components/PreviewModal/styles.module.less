@@ -1,0 +1,57 @@
+.preview-layer-body {
+  top: 0;
+  left: 0;
+  background-color: #000;
+}
+
+.preview-image {
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.preview-moving {
+  transition: none;
+}
+
+.preview-close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 26px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.preview-canvas-painter {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.preview-footer {
+  position: absolute;
+  bottom: 50px;
+  z-index: 10001;
+  width: 100%;
+  text-align: center;
+}
+
+.preview-footer-corner {
+  .preview-footer-btn {
+    width: 140px;
+    height: 70px;
+    margin-right: 20px;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+  }
+
+  .preview-footer-btn-override {
+    border: 2px solid #ededed;
+  }
+}

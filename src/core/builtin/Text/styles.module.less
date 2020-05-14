@@ -1,0 +1,93 @@
+.text-elem {
+  position: absolute;
+  box-sizing: border-box;
+  // 全局line-height: 1.5
+  line-height: 1.5;
+  word-break: break-word;
+
+  &-text-selected {
+    z-index: 10000;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      content: '';
+      border: 1px dashed red;
+    }
+  }
+}
+
+.edit-renderer {
+  &-text-edit-element {
+    margin-bottom: 46px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &-text-edit-title {
+    margin-bottom: 20px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 32px;
+    color: rgba(102, 102, 102, 1);
+  }
+
+  &-text-edit-item {
+    position: relative;
+    display: block;
+    padding: 18px 28px;
+    background-color: #f7f7f7;
+    border: 1px solid #f3f3f3;
+    border-radius: 8px;
+  }
+
+  &-text-edit-el,
+  &-text-edit-expend {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 45px;
+    color: rgba(51, 51, 51, 1);
+    background-color: transparent;
+  }
+
+  &-text-edit-el {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 18px 28px;
+  }
+
+  &-text-edit-clear {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    background: url('../../images/icon-delete.png') no-repeat center/30px 30px;
+  }
+
+  &-text-edit-expend {
+    position: relative;
+    min-height: 45px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    opacity: 0;
+    word-spacing: normal;
+    text-rendering: auto;
+  }
+}

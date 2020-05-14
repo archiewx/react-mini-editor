@@ -1,0 +1,42 @@
+.m-editor-box {
+  height: 100%;
+
+  &-tab-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 20px 0 6px;
+  }
+
+  &-tab-item {
+    flex: 1;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      padding-bottom: 10px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 40px;
+      color: #666;
+      border-bottom: 4px solid transparent;
+      transition: all 0.3s;
+    }
+  }
+
+  &-tab-item-active {
+    span {
+      color: rgba(28, 86, 245, 1);
+      border-bottom-color: #1c56f5;
+    }
+  }
+
+  &-tab-box {
+    box-sizing: border-box;
+    height: calc(100% - 80px);
+    padding: 40px 30px;
+    overflow: scroll;
+  }
+}

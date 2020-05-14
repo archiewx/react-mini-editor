@@ -1,0 +1,14 @@
+.m-box {
+  position: absolute;
+  z-index: 1;
+  // note: 这里当初希望可以通过框来限定图片大小
+  overflow: hidden;
+
+  &-selected {
+    z-index: 10000;
+  }
+
+  &-lock {
+    pointer-events: none;
+  }
+}

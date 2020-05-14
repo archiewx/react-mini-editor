@@ -1,0 +1,73 @@
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #999;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px auto;
+  border-radius: 4px;
+}
+
+.slider-track {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  margin: 0 47px;
+  background-color: #000;
+}
+
+.slider-track-btn-ans {
+  transition: all 0.3s linear;
+}
+
+.slider-track-btn {
+  position: absolute;
+  left: 50%;
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10Px;
+    height: 10Px;
+    content: '';
+    background-color: #d4d4d4;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.slider-track-text {
+  position: absolute;
+  font-family: PingFangSC;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(153, 153, 153, 1);
+  transform: translateY(calc(-100% - 26px));
+}
+
+.slider-track-text-start {
+  left: 0;
+  font-size: 26px;
+}
+
+.slider-track-text-end {
+  right: 0;
+  font-size: 42px;
+}

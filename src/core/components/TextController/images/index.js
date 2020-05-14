@@ -1,0 +1,6 @@
+export { default as IconFont } from './icon-font.png'
+export { default as IconUnFont } from './icon-un-font.png'
+export { default as IconKeyboard } from './icon-keyboard.png'
+export { default as IconUnKeyboard } from './icon-un-keyboard.png'
+export { default as IconColor } from './icon-color-selected.png'
+export { default as IconUnColor } from './icon-color-unselected.png'

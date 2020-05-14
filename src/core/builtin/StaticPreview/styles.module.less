@@ -1,0 +1,24 @@
+.abs-center {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.m-static-preview {
+  .abs-center;
+
+  top: 110px;
+  bottom: auto;
+  overflow: hidden;
+  transition: transform 0.1s;
+  transform-origin: center top;
+
+  &-senior {
+    .abs-center;
+
+    top: 0;
+    bottom: 0;
+    transform-origin: center;
+  }
+}
