@@ -8,6 +8,6 @@ export default {
     file: 'dist/index.js',
     format: 'umd',
   },
-  external: ['react'],
+  external: ['react', 'lodash'],
   plugins: [resolve(), commonjs(), typescript()],
 };
