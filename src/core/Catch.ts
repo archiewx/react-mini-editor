@@ -1,15 +1,15 @@
-import React from 'react'
-import mHook from './lib/hook'
+import React, { ErrorInfo } from 'react';
+import mHook from './lib/hook';
 
 class Catch extends React.Component {
-  componentDidCatch(error, info) {
-    mHook.error.call(error)
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    mHook.error.call(error);
   }
 
   render() {
-    const { children } = this.props
-    return children
+    const { children } = this.props;
+    return children;
   }
 }
 
-export default Catch
+export default Catch;

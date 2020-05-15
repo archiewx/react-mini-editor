@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react'
 import TextRenderer from './TextRenderer'
 import { drawText } from '../../lib/canvas'
