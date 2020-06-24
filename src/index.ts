@@ -1,15 +1,20 @@
-import Editor from './core'
-import { BUILTIN_PREVIEW_MODE } from './core/lib/constants'
-// import H5DSPreview from './core/components/H5DSView'
-import StickyContainer, { RelieveArea } from './core/components/StickyContainer'
+import Editor from './core';
+import { BUILTIN_PREVIEW_MODE } from './core/lib/constants';
+import StickyContainer, { RelieveArea } from './core/components/StickyContainer';
 
-Editor.PREVIEW_MODE = BUILTIN_PREVIEW_MODE
+type ExportEditor = typeof Editor;
 
-// Editor.H5DSPreview = H5DSPreview
-Editor.StickyContainer = StickyContainer
-Editor.RelieveArea = RelieveArea
+interface EditorInstance extends ExportEditor {
+  PREVIEW_MODE: typeof BUILTIN_PREVIEW_MODE;
+  StickContainer: typeof StickyContainer;
+  RelieveArea: typeof RelieveArea;
+}
 
-export { setPageData } from './core/lib/transform'
-export { getPageData } from './core/lib/transform'
+const EditorInstance = Editor as EditorInstance;
 
-export default Editor
+EditorInstance.PREVIEW_MODE = BUILTIN_PREVIEW_MODE;
+
+EditorInstance.StickContainer = StickyContainer;
+EditorInstance.RelieveArea = RelieveArea;
+
+export default Editor;
