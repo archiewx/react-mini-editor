@@ -1,26 +1,32 @@
 import omit from 'lodash/omit';
-import React, { forwardRef, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes, SFC, useMemo } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 
 import { useBootstrap, useInterceptor, usePlugins } from './bootstrap';
-import { PreviewFrame } from './builtin'
+import { PreviewFrame } from './builtin';
 import Catch from './Catch';
 import StickyContainer from './components/StickyContainer';
 import { MEditorContext, ThemeContext } from './context';
 import { useExposeHandle, useInvokeUpdate } from './lib/logic';
 import renderer from './lib/renderer';
 import { useH5DSJson } from './lib/transform';
+import { getUrlQuery } from './lib/tool';
 
 const pluginWhiteList = ['map'];
 
 export interface IMiniEditorProps {
+  dataSource: string | object;
+  swiperOption: object;
+  theme: object;
+  hidePages: any;
+  screenRatio: number;
 }
 
 const MiniEditor = forwardRef<any, IMiniEditorProps>((props, ref) => {
-  const { h5dsJSON, swiperOption, theme, hidePages, screenRatio = 1 } = props;
+  const { dataSource, swiperOption, theme, hidePages, screenRatio = 1 } = props;
   const bootOptions = useMemo(() => omit(props, 'h5dsJSON'), [props]);
   useBootstrap(bootOptions);
 
-  const h5ds = useH5DSJson(h5dsJSON, props);
+  const h5ds = useH5DSJson(dataSource, props);
   usePlugins(h5ds);
   const interOp = useMemo(() => ({ ...props, h5ds }), [h5ds, props]);
   useInterceptor(interOp);
